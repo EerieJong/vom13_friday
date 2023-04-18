@@ -39,7 +39,7 @@
         </div>
       </header>
 
-    <form action="/vom13_toy_template/php/login.php" method="post" class="form">
+    <form action="/vom13_toy_template/php/login.php" method="post" class="form" name="loginForm">
       <h2>SIGN IN</h2>
       <p><input type="text" name="id" placeholder="아이디"></p>
       <p><input type="password" name="pwd" placeholder="비밀번호"></p>
@@ -56,7 +56,16 @@
     loginBtn.addEventListener('click', loginCheck);
 
     function loginCheck(){
-      alert('abc');
+      if(!document.loginForm.id.value){
+        alert('아이디를 입력해 주세요.');
+        return;
+      }
+
+      if(!document.loginForm.pwd.value){
+        alert('비밀번호를 입력해 주세요.');
+        return;
+      }
+      document.loginForm.submit();
     }
   </script>
 </body>
